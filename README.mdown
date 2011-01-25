@@ -6,11 +6,11 @@ Now it's time to rebuild my configuration from bare metal.
 
 History
 -------
-* circa 2002 -- Using Vim primarily to maintain configuration on Unix servers
+* c. 2002 -- Using Vim primarily to maintain configuration on Unix servers
 
-* March 2010 -- Using as primary Python and Django editor. Inspired to switch to Vim at PyCon 2010 by Python colleagues using Vim as their primary editor. [my old configuration tuned for Python](http://github.com/briangershon/dotfiles) 
+* March 2010 -- Using as primary Python and Django editor. Inspired to switch to Vim at PyCon 2010 by Python colleagues using Vim as their primary editor. [My old configuration tuned for Python](http://github.com/briangershon/dotfiles) 
 
-* January 2011 -- Start from bare metal with initial focus on upgrading to pathogen. [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
+* January 2011 -- Start from bare metal with initial focus on upgrading to pathogen. See [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
 My Current Favorite Sources of Vim Configuration Ideas
 ------------------------------------------------------
@@ -22,22 +22,26 @@ My Current Favorite Sources of Vim Configuration Ideas
 
 * Godefroid Chapelle [@__gotcha](http://www.twitter.com/__gotcha) [https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim](https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim)
 
-How I'm Using
--------------
-1. I'm using MacVim 7.2 that I compiled myself to include a newer version
-   of Python to support the pyflakes.vim extension.
+Setup and Configuration
+-----------------------
+1. I'm using MacVim 7.3.
 
-   (Plus compile-in Ruby since plugins like FuzzyFinder use Ruby)
+   This version should have a version of Python that pyflakes.vim needs which is Python 2.5+
 
    Which version is your MacVim currently using?
 
-   In MacVim, type this:
+   	In MacVim, type this: `:python import sys; print sys.version`
 
-        :python import sys; print sys.version
+   If less than Python 2.5, you need to custom compile. See below.
 
-   If less than Python 2.5, you need to custom compile.
+2. Clone and Setup Symlinks
+  * `$ git clone git@github.com:briangershon/dotvim.git ~/.vim`
+  * `$ ln -s ~/.vim/vimrc ~/.vimrc`
+  * `$ ln -s ~/.vim/gvimrc ~/.gvimrc`
 
-   On SnowLeopard, this is how I compiled it:
+How to custom compile MacVim if you want to
+-------------------------------------------
+On SnowLeopard, this is how I compiled it:
 
     * Read Building MacVim (from: http://code.google.com/p/macvim/wiki/Building)
         * Make sure xcodebuild is symlinked from /usr/bin to xcodebuilddebuild in /Developer/usr/bin
@@ -48,9 +52,11 @@ How I'm Using
         $ make
     * To try it: open MacVim/build/Release/MacVim.app
 
-2. Clone Vim configuration
-  * `$ git clone git@github.com:briangershon/dotvim.git ~/.vim`
+How I'm Using
+=============
 
-3. Create symlinks
-  * `$ ln -s ~/.vim/vimrc ~/.vimrc`
-  * `$ ln -s ~/.vim/gvimrc ~/.gvimrc`
+Navigating Files and Buffers
+----------------------------
+* Navigating and editing files: My preference is using built in `:cd`, `:pwd`, `:e` to navigate and load files. I had tried NERDTree and MiniBufExplorer to navigate and view open files visually, but still felt like too many keystrokes and too much managing of those windows. (Though I did like the Bookmark feature of NerdTree, but `:cd` still pretty easy)
+
+* Navigating buffers: `:b` for navigating open buffers.
