@@ -18,6 +18,8 @@ My Current Favorite Sources of Vim Configuration Ideas
 
 * Clayton Parker [@claytron](http://www.twitter.com/claytron) for his initial configs with a focus on Python [http://github.com/claytron/dotfiles](http://github.com/claytron/dotfiles)
 
+* Johann Heller [https://github.com/empanda/dotfiles](https://github.com/empanda/dotfiles)
+
 * Aaron Vanderlip [@AaronVanderlip](http://www.twitter.com/AaronVanderlip)
 
 * Godefroid Chapelle [@__gotcha](http://www.twitter.com/__gotcha) [https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim](https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim)
@@ -34,10 +36,26 @@ Setup and Configuration
 
    If less than Python 2.5, you need to custom compile. See below.
 
-2. Clone and Setup Symlinks
-  * `$ git clone git@github.com:briangershon/dotvim.git ~/.vim`
-  * `$ ln -s ~/.vim/vimrc ~/.vimrc`
-  * `$ ln -s ~/.vim/gvimrc ~/.gvimrc`
+2. Managing Plugins (from [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/))
+
+  * Clone and Setup Symlinks
+    * `$ git clone git@github.com:briangershon/dotvim.git ~/.vim`
+    * `$ ln -s ~/.vim/vimrc ~/.vimrc`
+    * `$ ln -s ~/.vim/gvimrc ~/.gvimrc`
+    * `cd ~/.vim`
+    * `git submodule init`
+    * `git submodule update`
+
+  * Adding new sub modules from git
+    * `cd ~/.vim`
+    * `mkdir ~/.vim/bundle`
+    * `git submodule add http://github.com/tpope/vim-fugitive.git bundle/vim-fugitive`
+    * `git add .`
+    * `git commit -m "Install Fugitive.vim bundle as a submodule."`
+
+  * Updating plugins
+    * `cd ~/.vim/bundle/fugitive`
+    * `git pull`
 
 How to custom compile MacVim if you want to
 -------------------------------------------
