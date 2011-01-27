@@ -41,10 +41,6 @@ map <silent> <leader>H :set hlsearch!<CR>
 " shortcut to clear search pattern
 map <silent> <leader>h :let @/ = ""<CR>
 
-" use normal regex when searching
-nnoremap / /\v
-vnoremap / /\v
-
 " subsitute the whole file by default
 set gdefault
 
