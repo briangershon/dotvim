@@ -50,7 +50,8 @@ set gdefault
 filetype on
 filetype plugin indent on
 
-" filetype: JavaScript
+" filetype: HTML, CSS and JavaScript
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 let javascript_enable_domhtmlcss=1
-
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
