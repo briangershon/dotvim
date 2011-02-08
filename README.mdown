@@ -18,6 +18,10 @@ My Current Favorite Sources of Vim Configuration Ideas
 
 * Clayton Parker [@claytron](http://www.twitter.com/claytron) for his initial configs with a focus on Python [http://github.com/claytron/dotfiles](http://github.com/claytron/dotfiles)
 
+* [Ultimate Vim config](http://spf13.com/post/ultimate-vim-config) and [The Perfect .vimrc vim config file](http://spf13.com/post/perfect-vimrc-vim-config-file)
+
+* Some nice general options: [http://maryhola.com/misc/vimrc/vimrc.vimrc.html](http://maryhola.com/misc/vimrc/vimrc.vimrc.html)
+
 * Johann Heller [https://github.com/empanda/dotfiles](https://github.com/empanda/dotfiles)
 
 * Aaron Vanderlip [@AaronVanderlip](http://www.twitter.com/AaronVanderlip)
@@ -77,6 +81,11 @@ Navigating Files and Buffers
 ----------------------------
 * Navigating and editing files: My preference is using built in `:cd`, `:pwd`, `:e` to navigate and load files. I had tried NERDTree and MiniBufExplorer to navigate and view open files visually, but still felt like too many keystrokes and too much managing of those windows. (Though I did like the Bookmark feature of NerdTree, but `:cd` still pretty easy)
 
-* Navigating buffers: `:b` for navigating open buffers.
+* Navigating buffers: `:b` for navigating open buffers. `:sb` for open buffer into a new split window.
 
 * `=` auto indents
+
+* Toggle comments by visually selecting lines and typing `gc` (via NERDCommenter)
+
+* Setup some nice fonts for MacVim. Set your own in gvimrc.
+
