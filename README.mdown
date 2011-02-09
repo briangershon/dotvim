@@ -79,11 +79,21 @@ How I'm Using
 
 Navigating Files and Buffers
 ----------------------------
-* Navigating and editing files: My preference is using built in `:cd`, `:pwd`, `:e` to navigate and load files. I had tried NERDTree and MiniBufExplorer to navigate and view open files visually, but still felt like too many keystrokes and too much managing of those windows. (Though I did like the Bookmark feature of NerdTree, but `:cd` still pretty easy)
+* Navigating and editing files: My preference is using built in `:cd`, `:pwd`, `:e` to navigate and load files. I had tried NERDTree and MiniBufExplorer to navigate and view open files visually, but still felt like too many keystrokes and too much managing of those windows. (Though I did like the Bookmark feature of NerdTree, but `:cd` still pretty easy) See wild* options in .vimrc
 
 * Navigating buffers: `:b` for navigating open buffers. `:sb` for open buffer into a new split window.
 
+Code Editing
+------------
 * Toggle comments by visually selecting lines and typing `gc` (via NERDCommenter)
 
-* Setup some nice fonts for MacVim. Set your own in gvimrc.
+Custom Key Mappings
+-------------------
+* `:map` to see all of them
+
+* `,v` to load .vimrc and auto-reload when saved. `,r` to load this README.mdown 
+
+MacVim settings (gvimrc)
+------------------------
+* Setup some nice fonts for MacVim.
 
