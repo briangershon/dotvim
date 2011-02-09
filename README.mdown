@@ -85,6 +85,8 @@ Navigating Files and Buffers
 
 Code Editing
 ------------
+* `=` auto indents
+
 * Toggle comments by visually selecting lines and typing `gc` (via NERDCommenter)
 
 Custom Key Mappings
