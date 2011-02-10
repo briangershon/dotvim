@@ -23,7 +23,7 @@ set laststatus=2                                          " statusline setup
 if has('statusline')
   "set statusline=\ \ \ \ \ line:%l\ column:%c\ \ \ %M%Y%r%=%-14.(%t%)\ %p%%
   set statusline=   " clear the statusline, allow for rearranging parts
-  set statusline+=%f                "Path to the file, as typed or relative to current dir
+  set statusline+=%f\                "Path to the file, as typed or relative to current dir
   set statusline+=%#errormsg#        "change color
   set statusline+=%{&ff!='unix'?'['.&ff.']':''}   "display a warning if fileformat isnt unix
   set statusline+=%*                "reset color to normal statusline color
@@ -32,7 +32,6 @@ if has('statusline')
   set statusline+=%*                "reset color to normal statusline color
   set statusline+=\ %y              "filetype
   set statusline+=%([%R%M]%)        "read-only (RO), modified (+) and unmodifiable (-) flags between braces
-  set statusline+=%#StatusLineNC#%{&ff=='unix'?'':&ff.'\ format'}%* "shows '!' if file format is not platform default
   set statusline+=%{'~'[&pm=='']}   "shows a '~' if in patchmode
   set statusline+=\ %{fugitive#statusline()}  "show Git info, via fugitive.git
   "set statusline+=\ (%{synIDattr(synID(line('.'),col('.'),0),'name')}) "DEBUG : display the current syntax item name
