@@ -149,6 +149,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 let javascript_enable_domhtmlcss=1
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
 " Commenting
 vnoremap <silent> gc <ESC>:call NERDComment(1, "toggle")<cr>
