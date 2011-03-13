@@ -90,8 +90,8 @@ map <silent> <leader>h :let @/ = ""<CR>
 set gdefault
 
 " hide the backup and swap files
-set backupdir=~/.backup/vim,.,/tmp
-set directory=~/.backup/vim/swap,.,/tmp
+set backupdir=~/.backup/vim,/tmp,.
+set directory=~/.backup/vim/swap,/tmp,.
 
 " highlight the cursor line
 set cursorline
