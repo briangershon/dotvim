@@ -1,78 +1,70 @@
 README
 ======
-Starting with other people's Vim configuration is a great way to learn Vim.
-
-Now it's time to rebuild my configuration from bare metal.
-
-History
--------
-* c. 2002 -- Using Vim primarily to maintain configuration on Unix servers
-
-* March 2010 -- Using as primary Python and Django editor. Inspired to switch to Vim at PyCon 2010 by Python colleagues using Vim as their primary editor. [My old configuration tuned for Python](http://github.com/briangershon/dotfiles) 
-
-* January 2011 -- Start from bare metal with initial focus on upgrading to pathogen. See [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
-
-My Current Favorite Sources of Vim Configuration Ideas
-------------------------------------------------------
-* Drew Neil [VimCasts.org](http://www.vimcasts.org/) [http://github.com/nelstrom/dotfiles](http://github.com/nelstrom/dotfiles)
-
-* Clayton Parker [@claytron](http://www.twitter.com/claytron) for his initial configs with a focus on Python [http://github.com/claytron/dotfiles](http://github.com/claytron/dotfiles)
-
-* [Ultimate Vim config](http://spf13.com/post/ultimate-vim-config) and [The Perfect .vimrc vim config file](http://spf13.com/post/perfect-vimrc-vim-config-file)
-
-* Some nice general options: [http://maryhola.com/misc/vimrc/vimrc.vimrc.html](http://maryhola.com/misc/vimrc/vimrc.vimrc.html)
-
-* Johann Heller [https://github.com/empanda/dotfiles](https://github.com/empanda/dotfiles)
-
-* Aaron Vanderlip [@AaronVanderlip](http://www.twitter.com/AaronVanderlip)
-
-* Godefroid Chapelle [@__gotcha](http://www.twitter.com/__gotcha) [https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim](https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim)
+If new to Vim, I'd recommend pulling pieces from other people's Vim configuration (such as this one) into your own `.vimrc` instead of wholesale using other people's `.vimrc` so you learn as you go.
 
 Setup and Configuration
 -----------------------
-1. I'm using MacVim 7.3.
+I'm using both terminal Vim and MacVim 7.3
 
-   This version should have a version of Python that pyflakes.vim needs which is Python 2.5+
+Which version is your MacVim currently using?
 
-   Which version is your MacVim currently using?
+    In MacVim, type this: `:python import sys; print sys.version`
 
-   	In MacVim, type this: `:python import sys; print sys.version`
+### For Python development:
 
-   If less than Python 2.5, you need to custom compile. See below.
+MacVim should have a version of Python that pyflakes.vim needs which is Python 2.5+
 
-2. Managing Plugins (from [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/))
+If less than Python 2.5, you need to custom compile. See below.
 
-  * Clone and Setup Symlinks
-    * `$ git clone git@github.com:briangershon/dotvim.git ~/.vim`
-    * `$ ln -s ~/.vim/vimrc ~/.vimrc`
-    * `$ ln -s ~/.vim/gvimrc ~/.gvimrc`
-    * `cd ~/.vim`
-    * `git submodule init`
-    * `git submodule update`
+### For JavaScript development:
 
-  * Adding new sub modules from git
-    * `cd ~/.vim`
-    * `mkdir ~/.vim/bundle`
-    * `git submodule add http://github.com/tpope/vim-fugitive.git bundle/vim-fugitive`
-    * `git add .`
-    * `git commit -m "Install Fugitive.vim bundle as a submodule."`
+Coming soon.
 
-  * Updating plugins
-    * `cd ~/.vim/bundle/fugitive`
-    * `git pull`
+### To setup on a new machine:
 
-How to custom compile MacVim if you want to
--------------------------------------------
+    cd ~
+    # remove ~/.vim if folder already exists
+    git clone git@github.com:briangershon/dotvim.git ~/.vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
+    cd ~/.vim
+    git submodule init
+    git submodule update
+
+### Managing Vim Plugins with Pathogen
+
+See also [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
+
+Adding new plugins via git submodules:
+
+    mkdir ~/.vim/bundle     # if it doesn't already exist
+    
+    cd ~/.vim
+    git submodule add http://github.com/tpope/vim-fugitive.git bundle/vim-fugitive
+    git add .
+    git commit -m "Install Fugitive.vim bundle as a submodule."
+
+Updating existing plugins:
+
+    cd ~/.vim/bundle/fugitive
+    git pull
+
+### How to custom compile MacVim if you want to
+
 On SnowLeopard, this is how I compiled it:
 
-    * Read Building MacVim (from: http://code.google.com/p/macvim/wiki/Building)
-        * Make sure xcodebuild is symlinked from /usr/bin to xcodebuilddebuild in /Developer/usr/bin
-        * Clone the MacVim.git repo: git clone git://repo.or.cz/MacVim.git vim7
-        * Configure and build Vim:
-        $ cd vim7/src
-        $ ./configure --with-features=huge --enable-pythoninterp --enable-rubyinterp --enable-gui-macvim
-        $ make
-    * To try it: open MacVim/build/Release/MacVim.app
+Read Building MacVim (from: http://code.google.com/p/macvim/wiki/Building)
+
+    # Make sure xcodebuild is symlinked from /usr/bin to xcodebuilddebuild in /Developer/usr/bin
+    # Clone the MacVim.git repo: git clone git://repo.or.cz/MacVim.git vim7
+    # Configure and build Vim:
+    cd vim7/src
+    ./configure --with-features=huge --enable-pythoninterp --enable-rubyinterp --enable-gui-macvim
+    make
+
+To try it:
+
+    # open MacVim/build/Release/MacVim.app
 
 How I'm Using
 =============
@@ -99,3 +91,28 @@ MacVim settings (gvimrc)
 ------------------------
 * Setup some nice fonts for MacVim.
 
+History
+=======
+* c. 2002 -- Using Vim primarily to maintain configuration on Unix servers
+
+* March 2010 -- Using as primary Python and Django editor. Inspired to switch to Vim at PyCon 2010 by Python colleagues using Vim as their primary editor. [My old configuration tuned for Python](http://github.com/briangershon/dotfiles) 
+
+* January 2011 -- Start from bare metal with initial focus on upgrading to pathogen. See [Synchronizing plugins with git submodules and pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
+
+* April 2012 -- Inspired to jump back into Vim after a year hiatus. Giving Solarized theme a try.
+
+A few personal sources of Vim Configuration Ideas
+-------------------------------------------------
+* Drew Neil [VimCasts.org](http://www.vimcasts.org/) [http://github.com/nelstrom/dotfiles](http://github.com/nelstrom/dotfiles)
+
+* Clayton Parker [@claytron](http://www.twitter.com/claytron) for his initial configs with a focus on Python [http://github.com/claytron/dotfiles](http://github.com/claytron/dotfiles)
+
+* [Ultimate Vim config](http://spf13.com/post/ultimate-vim-config) and [The Perfect .vimrc vim config file](http://spf13.com/post/perfect-vimrc-vim-config-file)
+
+* Some nice general options: [http://maryhola.com/misc/vimrc/vimrc.vimrc.html](http://maryhola.com/misc/vimrc/vimrc.vimrc.html)
+
+* Johann Heller [https://github.com/empanda/dotfiles](https://github.com/empanda/dotfiles)
+
+* Aaron Vanderlip [@AaronVanderlip](http://www.twitter.com/AaronVanderlip)
+
+* Godefroid Chapelle [@__gotcha](http://www.twitter.com/__gotcha) [https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim](https://svn.plone.org/svn/collective/vimplone/branches/plippers-vim)

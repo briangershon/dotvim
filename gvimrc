@@ -17,4 +17,9 @@ if has("gui_macvim")
     "set noantialias
     " maybe set the transparency
     set transparency=2
+
+    " theme
+    syntax enable
+    set background=light
+    colorscheme solarized
 endif
