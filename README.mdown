@@ -2,34 +2,61 @@ README
 ======
 If new to Vim, I'd recommend pulling pieces from other people's Vim configuration (such as this one) into your own `.vimrc` instead of wholesale using other people's `.vimrc` so you learn as you go.
 
+I'm using both MacVim 7.3 and terminal Vim, so have configs for both.
+
+Install MacVim 7.3
+------------------
+
+    # install Homebrew from http://mxcl.github.com/homebrew/
+    brew install macvim
+    
+    # if homebrew can't find xcode (since it's no longer in /Developer)
+    sudo xcode-select -switch /Applications/Xcode.app
+    xcode-select -print-path    # to double check
+    # rerun brew install macvim
+
+Setting up my Vim configuration on a new machine
+------------------------------------------------
+
+    # bring down code in ~/.vim
+    # make sure ~/.vim doesn't already exist
+    cd ~
+    git clone git@github.com:briangershon/dotvim.git ~/.vim
+
+    # bring down all modules
+    cd ~/.vim
+    git submodule init
+    git submodule update
+    
+    # link config files
+    ln -s ~//vimrc ~/.vimrc                 # vim configuration
+    ln -s ~/dotvim/gvimrc ~/.gvimrc         # graphical vim configuration (for MacVim)
+
 Setup and Configuration
 -----------------------
-I'm using both terminal Vim and MacVim 7.3
-
-Which version is your MacVim currently using?
-
-    In MacVim, type this: `:python import sys; print sys.version`
 
 ### For Python development:
 
 MacVim should have a version of Python that pyflakes.vim needs which is Python 2.5+
 
-If less than Python 2.5, you need to custom compile. See below.
+Which version of Python is MacVim currently using?
+
+    In MacVim, type this: `:python import sys; print sys.version`
+
+If less than Python 2.5, you need to custom compile in Python. See below.
 
 ### For JavaScript development:
 
-Coming soon.
+#### Install dependencies:
 
-### To setup on a new machine:
+JSHint
 
-    cd ~
-    # remove ~/.vim if folder already exists
-    git clone git@github.com:briangershon/dotvim.git ~/.vim
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-    cd ~/.vim
-    git submodule init
-    git submodule update
+    npm install -g jshint
+
+#### Helpful websites:
+
+* [Recommended Vim plugins for JavaScript coding?](http://stackoverflow.com/questions/4777366/recommended-vim-plugins-for-javascript-coding)
+
 
 ### Managing Vim Plugins with Pathogen
 
@@ -48,6 +75,14 @@ Updating existing plugins:
 
     cd ~/.vim/bundle/fugitive
     git pull
+    
+Removing existing plugins:
+
+    # from http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule
+    # Delete the relevant section from the .gitmodules file.
+    # Delete the relevant section from .git/config.
+    # Run git rm --cached path_to_submodule (no trailing slash).
+    # Commit and delete the now untracked submodule files.
 
 ### How to custom compile MacVim if you want to
 
@@ -90,6 +125,8 @@ Custom Key Mappings
 MacVim settings (gvimrc)
 ------------------------
 * Setup some nice fonts for MacVim.
+
+* Using solarized color theme.
 
 History
 =======
