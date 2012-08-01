@@ -11,8 +11,8 @@ if has("gui_macvim")
     "set fuoptions=maxvert,maxhorz
 
     "set guifont=Monaco:h10
-    "set guifont=Menlo\ Regular:h12
-    set guifont=Droid\ Sans\ Mono:h12
+    set guifont=Menlo\ Regular:h14
+    "set guifont=Droid\ Sans\ Mono:h12
 
     "set noantialias
     " maybe set the transparency
