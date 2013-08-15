@@ -53,6 +53,17 @@ JSHint
 
     npm install -g jshint
 
+DoctorJS (to generate tag file of symbols)
+
+    brew install ctags-exuberant
+    
+    clone git://github.com/mozilla/doctorjs.git
+    cd doctorjs
+    git submodule init
+    git submodule update
+    make
+    make install
+    
 #### Helpful websites:
 
 * [Recommended Vim plugins for JavaScript coding?](http://stackoverflow.com/questions/4777366/recommended-vim-plugins-for-javascript-coding)
